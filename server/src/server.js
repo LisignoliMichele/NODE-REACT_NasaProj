@@ -1,4 +1,6 @@
 const http = require('http');
+const cluster = require('cluster')
+const os = require('os')
 
 const app = require('./app');
 
@@ -16,4 +18,15 @@ async function startServer() {
    });
 }
 
-startServer();
+// NODE cluster module
+
+if (cluster.isMaster) {
+   console.log('master has been started...');
+   const NUM_Workers = os.cpus().length;
+   for (let i = 0; i < NUM_Workers; i++){
+      cluster.fork();
+   }
+} else{
+   console.log('Worker process started.');
+   startServer();
+}

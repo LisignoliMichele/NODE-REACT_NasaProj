@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/LisignoliMichele/NODE-REACT_NasaProj/issues"
   },
-  "homepage": "https://github.com/LisignoliMichele/NODE-REACT_NasaProj#readme"
+  "homepage": "https://github.com/LisignoliMichele/NODE-REACT_NasaProj#readme",
+  "dependencies": {}
 }
